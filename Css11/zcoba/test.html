@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengaduan Masyarakat Bogor</title>
+    <style>
+        /* Layar desktop */
+        .container {
+            text-align: end;
+            margin-bottom: 20px;
+        }
+
+        .container button {
+            background-color: orange;
+            cursor: pointer;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .complain {
+            margin-right: 60%;
+        }
+
+        .complain ol {
+            font-size: 20px;
+        }
+
+        img {
+            width: 730px;
+            margin-left: 110%;
+            margin-top: -60%;
+        }
+
+        .flex-container {
+            margin-top: 15px;
+            display: flex;
+            /* mengubah ke mode flexbox */
+            flex-wrap: wrap;
+            /* mengatur item flexbox dapat diwrap/apabila container tidak cukup lagi untuk membungkus item, maka item akan diturunkan */
+            flex-direction: row;
+            /* Mengatur arah item ke row/satu baris */
+            justify-content: center;
+            /* mensejajarkan item selalu di tengah dalam satu baris */
+        }
+
+        .item {
+            width: 280px;
+            height: 120px;
+            background-color: orange;
+            margin: 3px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            /* mengatur setiap item flexbox dapat melebar 1 bagian dari total item*/
+            flex-shrink: 1;
+            /* mengatur setiap item flexbox dapat menciut 1 bagian dari total item*/
+            text-align: center;
+        }
+
+        .form-pengaduan {
+            margin-top: 30px;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            float: left; /* Tambahkan float untuk mengatur posisi sebelah kiri */
+        }
+
+        .form-pengaduan h1 {
+            text-align: center;
+        }
+
+        .form-pengaduanform {
+            margin-top: 20px;
+        }
+
+        .form-pengaduanlabel {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-pengaduan input[type="text"], textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-pengaduan input[type="file"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-pengaduanbutton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .form-pengaduan button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Output dari hasil input */
+        .output {
+			margin-top: 30px;
+            float: right; /* Tambahkan float untuk mengatur posisi sebelah kanan */
+            border: 1px solid #ccc;
+            padding: 30px 150px 30px 150px;
+            border-radius: 5px;
+			text-align: start;
+        }
+
+
+        .output-content {
+            display: flex;
+			text-align: left;
+            justify-content: space-between;
+        }
+
+        .output-id {
+            
+            padding-left: 20px;
+			width: 250px
+        }
+
+        .output-img {
+            flex: 1;
+            text-align: right;
+        }
+
+        /* Tambahan gaya untuk tampilan yang lebih baik */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button type="button" onclick="location.href='../admin/login.html'">Administrator</button>
+</div>
+<div class="complain">
+    <h2>Pengaduan Masyarakat</h2>
+    <ol>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque officiis nesciunt totam quisquam veniam in quia libero facilis, consectetur veritatis ex, hic ut fuga asperiores facere. At doloremque similique illum!</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque officiis nesciunt totam quisquam veniam in quia libero facilis, consectetur veritatis ex,</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque officiis nesciunt totam quisquam veniam in quia libero facilis,</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+    </ol>
+
+    <img src="image1.png">
+
+</div>
+
+<div>
+    <section class="flex-container">
+        <div class="item">
+            <H4>JUMLAH KECAMATAN</H4>
+            <H4>15</H4>
+        </div>
+        <div class="item">
+            <H4>JUMLAH DESA</H4>
+            <H4>42</H4>
+        </div>
+        <div class="item">
+            <H4>JUMLAH PENDUDUK</H4>
+            <H4>12.000</H4>
+        </div>
+        <div class="item">
+            <H4>DATA PER TAHUN</H4>
+            <H4>2023</H4>
+        </div>
+    </section>
+</div>
+
+<div class="form-pengaduan">
+    <h1>Buat Pengaduan</h1>
+    <form action="proses-pengaduan.php" method="POST" enctype="multipart/form-data">
+        <label for="nik">NIK :</label>
+        <input type="text" id="nik" name="nik" required>
+
+        <label for="nama">Nama Lengkap :</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="noTelp">No Telp :</label>
+        <input type="text" id="noTelp" name="noTelp" required>
+
+        <label for="pengaduan">Pengaduan :</label>
+        <textarea id="pengaduan" name="pengaduan" rows="4" required></textarea>
+
+        <label for="file">Upload File :</label>
+        <input type="file" id="file" name="file" accept="image/*" required>
+
+        <button type="submit">Kirim</button>
+    </form>
+</div>
+
+<!-- Output dari hasil input -->
+<div class="output">
+    <h2>Laporan Pengaduan</h2>
+    <div class="output-content">
+        <div class="output-id">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, magni, veniam alias hic natus enim nobis dolor similique voluptatibus nemo animi et quam nesciunt sunt perferendis cumque quisquam in unde.</p>
+        </div>
+        <div class="output-img">
+            <img src="im.png" alt="Foto Laporan">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
